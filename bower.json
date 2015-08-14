@@ -1,0 +1,22 @@
+{
+  "name": "Angular string replacement filters",
+  "version": "0.0.1",
+  "authors": [
+    "minutephp <dev@minutephp.com>"
+  ],
+  "description": "AngularJS common string filters",
+  "main": "src/js/angular-string-filters.js",
+  "keywords": [
+    "angularjs",
+    "notice"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.minutephp.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
