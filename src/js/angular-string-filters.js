@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('angularStringFilters', [])
+    angular.module('angularStringFilters', ['ngSanitize'])
         .filter('truncate', function () {
             return function (input, chars, breakOnWord) {
                 if (isNaN(chars)) return input;
@@ -54,6 +54,15 @@
         .filter('trustedHTML', function ($sce) {
             return function (src) {
                 return $sce.trustAsHtml(src);
+            }
+        })
+        .filter('safeHTML', function ($sanitize) {
+            return function (src) {
+                try {
+                    var html = $sanitize(src);
+                    return html;
+                } catch (e) {
+                }
             }
         })
         .filter('trustedURL', function ($sce) {
