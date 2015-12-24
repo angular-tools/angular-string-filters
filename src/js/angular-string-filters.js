@@ -45,10 +45,16 @@
             };
         })
         .filter('ucwords', function () {
-            return function (input, arg) {
-                return input.replace(/(?:^|\s)\S/g, function (a) {
-                    return a.toUpperCase();
-                });
+            return function (input, readable) {
+                if (input) {
+                    if (readable) {
+                        input = input.split('_').join(' ');
+                    }
+
+                    return input.replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase();});
+                }
+
+                return '';
             };
         })
         .filter('trustedHTML', function ($sce) {
