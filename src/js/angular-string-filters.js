@@ -57,6 +57,17 @@
                 return '';
             };
         })
+        .filter('basename', function () {
+            return function (url, arg) {
+                (url || '').split('/').pop();
+            };
+        })
+        .filter('bool', function () {
+            return function (str) {
+                //console.log("str: ", str);
+                return str != '';
+            };
+        })
         .filter('trustedHTML', function ($sce) {
             return function (src) {
                 return $sce.trustAsHtml(src);
